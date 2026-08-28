@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+@theme {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gray-600: #9597a5;
+  --color-gray-100: #f4f5f7;
+  --color-gray-50: #fafafa;
+  --color-blue-950: #2d314d;
+  --color-green-400: #30c88f;
+  --background-image-gradient-1: linear-gradient(#33d35e 0%, #2ab6d9 100%);
+  --background-image-gradient-2: linear-gradient(#2d314d 0%, #2d314d00 100%);
+  --font-sans: "Public Sans", sans-serif;
+}
+
+@utility preset-1 {
+  @apply font-light text-[3.5rem] leading-[120%] tracking-[-1px];
+}
+
+@utility preset-2 {
+  @apply font-light text-[2.5rem] leading-[120%] tracking-[-.75px];
+}
+@utility preset-3 {
+  @apply font-light text-[2rem] leading-[120%] tracking-[-.5px];
+}
+@utility preset-4 {
+  @apply font-light text-2xl leading-[115%] tracking-[-.4px];
+}
+@utility preset-5 {
+  @apply font-normal text-lg leading-[155%] tracking-[-.25px];
+}
+@utility preset-6 {
+  @apply font-light text-base leading-[120%] tracking-[-.25px];
+}
+@utility preset-7-b {
+  @apply font-bold text-sm leading-[200%] tracking-normal;
+}
+@utility preset-7-r {
+  @apply font-normal text-sm leading-[115%] tracking-normal;
+}
+@utility preset-8 {
+  @apply font-normal text-[0.625rem] leading-[115%] tracking-normal;
+}
