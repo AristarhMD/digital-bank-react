@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import List from "./components/list";
+import BtnRequest from "./components/btnrequest";
 
 export default function Navigation() {
   const logo = (
@@ -159,8 +160,8 @@ export default function Navigation() {
   const handleMenuClick = () => setIsOpen(!isOpen);
 
   return (
-    <header className="relative bg-white">
-      <nav className="flex z-10 justify-between items-center p-6 md:px-20 ">
+    <header className="relative bg-white ">
+      <nav className="flex mx-auto z-10 justify-between items-center p-6 md:px-20 md:py-4 xl:max-w-277.5">
         {logo}
         <button
           ref={buttonRef}
@@ -174,13 +175,13 @@ export default function Navigation() {
 
         {/* Overlay for mobile menu */}
         <div
-          className={`fixed inset-0 top-17.5 w-full bg-gradient-2 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
+          className={`fixed xl:hidden inset-0 top-17.5 md:top-13.5 w-full bg-gradient-2 transition-opacity transition-z duration-300  ${isOpen ? "opacity-100 z-1" : "opacity-0 -z-1"}`}
           onClick={() => setIsOpen(false)}
         >
           {/* Mobile list */}
           <div
             ref={listRef}
-            className={`fixed top-23.5 min-w-[87.2%] md:min-w-[79.03%] right-6 left-6 md:right-20 md:left-20 py-8 rounded-sm text-center bg-white transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-[120%]"}`}
+            className={`fixed top-23.5 min-w-[87.2%] md:min-w-[79.03%] right-6 left-6 md:right-20 md:left-20 py-8 rounded-sm text-center bg-white transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0 z-1" : "translate-x-[120%] z-1"}`}
           >
             <List
               list={["Home", "About", "Contact", "Blog", "Careers"]}
@@ -190,6 +191,14 @@ export default function Navigation() {
             />
           </div>
         </div>
+
+        {/* Desktop Nav */}
+        <List
+          list={["Home", "About", "Contact", "Blog", "Careers"]}
+          listClass="xl:flex gap-8 hidden "
+          itemClass="relative preset-7-r text-gray-600 hover:text-blue-950 hover:before:content-[''] hover:before:absolute hover:before:top-full hover:before:h-1 hover:before:w-full hover:before:bg-gradient-1 hover:before:mt-6.5"
+        />
+        <BtnRequest className="hidden xl:block" />
       </nav>
     </header>
   );
