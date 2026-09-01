@@ -1,24 +1,24 @@
 import data from "../src/opportunities";
 import articles from "../articles";
 import BtnRequest from "./components/btnrequest";
-// import bgMobile from "./assets/bg-intro-mobile.svg";
-// import bgDesktop from "./assets/bg-intro-desktop.svg";
-import bgPhone from "./assets/bg-phones.svg";
+
 import { Article } from "./components/article";
+
+const bgPhone = "./public/images/image-mockups.png";
 
 export default function Content() {
   return (
     <main>
       {/* First section */}
-      <section className="mb-14 md:mb-18 flex flex-col gap-12">
-        <div className={`relative h-85.75 md:h-145.25 overflow-hidden `}>
+      <section className="mb-14 md:mb-18 xl:mb-0 flex flex-col gap-12 xl:flex-row xl:gap-0 ">
+        <div className="relative h-70 md:h-145.25 overflow-hidden bg-[url('../public/images/bg-intro-mobile.svg')] md:bg-[url('../public/images/bg-intro-desktop.svg')] bg-no-repeat bg-cover md:bg-bottom xl:order-2 xl:bg-cover  xl:w-full ">
           <img
             src={bgPhone}
             alt="Phone images"
-            className="absolute top-0 w-full h-full "
+            className="absolute top-1/3 -translate-y-1/2 left-1/2 -translate-x-1/2 w-auto h-full scale-[150%] md:scale-[142%] mt-20 xl:z-3 "
           />
         </div>
-        <div className="flex flex-col gap-6 items-center justify-center text-center w-[87.2%] md:max-w-88 mx-auto">
+        <div className="flex flex-col gap-6 items-center justify-center text-center w-[87.2%] md:max-w-88 mx-auto xl:mx-0 xl:col-start-1 xl:ml-[11.1%] xl:text-left">
           <h1 className="preset-2 text-blue-950">
             Next generation digital banking
           </h1>
@@ -28,7 +28,7 @@ export default function Content() {
             more.
           </p>
 
-          <BtnRequest className="cursor-pointer" />
+          <BtnRequest className="cursor-pointer xl:mr-auto" />
         </div>
       </section>
       {/* Section choose bank */}

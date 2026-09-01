@@ -161,7 +161,7 @@ export default function Navigation() {
 
   return (
     <header className="relative bg-white ">
-      <nav className="flex mx-auto z-10 justify-between items-center p-6 md:px-20 md:py-4 xl:max-w-277.5">
+      <nav className="flex mx-auto z-10 justify-between items-center p-6 md:px-20 md:py-4 xl:px-0 xl:w-279">
         {logo}
         <button
           ref={buttonRef}
