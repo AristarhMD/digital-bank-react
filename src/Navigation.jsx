@@ -56,22 +56,22 @@ export default function Navigation() {
         fill="#2D314D"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M10.8025 0.536987L0 20.241H5.98608L16.7885 0.536987H10.8025Z"
         fill="url(#paint0_linear_72149_7)"
       />
       <path
         opacity="0.5"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M18.1709 0.536987L7.36841 20.241H13.3545L24.157 0.536987H18.1709Z"
         fill="url(#paint1_linear_72149_7)"
       />
       <path
         opacity="0.15"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M25.5393 0.536987L14.7368 20.241H20.7229L31.5254 0.536987H25.5393Z"
         fill="url(#paint2_linear_72149_7)"
       />
@@ -84,8 +84,8 @@ export default function Navigation() {
           y2="10.4498"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#33D35E" />
-          <stop offset="1" stop-color="#2AB6D9" />
+          <stop stopColor="#33D35E" />
+          <stop offset="1" stopColor="#2AB6D9" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_72149_7"
@@ -95,8 +95,8 @@ export default function Navigation() {
           y2="10.4498"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#33D35E" />
-          <stop offset="1" stop-color="#2AB6D9" />
+          <stop stopColor="#33D35E" />
+          <stop offset="1" stopColor="#2AB6D9" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_72149_7"
@@ -106,8 +106,8 @@ export default function Navigation() {
           y2="10.4498"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#33D35E" />
-          <stop offset="1" stop-color="#2AB6D9" />
+          <stop stopColor="#33D35E" />
+          <stop offset="1" stopColor="#2AB6D9" />
         </linearGradient>
       </defs>
     </svg>
@@ -115,7 +115,7 @@ export default function Navigation() {
 
   const hamburger = (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="11">
-      <g fill="#2D314D" fill-rule="evenodd">
+      <g fill="#2D314D" fillRule="evenodd">
         <path d="M0 0h24v1H0zM0 5h24v1H0zM0 10h24v1H0z" />
       </g>
     </svg>
@@ -123,7 +123,7 @@ export default function Navigation() {
 
   const close = (
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19">
-      <g fill="#2D314D" fill-rule="evenodd">
+      <g fill="#2D314D" fillRule="evenodd">
         <path d="M.868.661l16.97 16.97-.706.708L.162 1.369z" />
         <path d="M.161 17.632L17.131.662l.708.706-16.97 16.97z" />
       </g>
@@ -175,13 +175,13 @@ export default function Navigation() {
 
         {/* Overlay for mobile menu */}
         <div
-          className={`fixed xl:hidden inset-0 top-17.5 md:top-13.5 w-full bg-gradient-2 transition-opacity transition-z duration-300  ${isOpen ? "opacity-100 z-1" : "opacity-0 -z-1"}`}
+          className={`fixed xl:hidden inset-0 top-17.5 md:top-13.5 w-full bg-gradient-2 transition-all duration-300  ${isOpen ? "opacity-100 z-1 visible" : "opacity-0 z-1 invisible"}`}
           onClick={() => setIsOpen(false)}
         >
           {/* Mobile list */}
           <div
             ref={listRef}
-            className={`fixed top-23.5 min-w-[87.2%] md:min-w-[79.03%] right-6 left-6 md:right-20 md:left-20 py-8 rounded-sm text-center bg-white transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0 z-1" : "translate-x-[120%] z-1"}`}
+            className={`fixed top-23.5 min-w-[87.2%] md:min-w-[79.03%] right-6 left-6 md:right-20 md:left-20 py-8 rounded-sm text-center bg-white transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0 z-5" : "translate-x-[120%] z-5"}`}
           >
             <List
               list={["Home", "About", "Contact", "Blog", "Careers"]}

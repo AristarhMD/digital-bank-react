@@ -1,13 +1,15 @@
 import data from "../src/opportunities";
+import articles from "../articles";
 import BtnRequest from "./components/btnrequest";
 // import bgMobile from "./assets/bg-intro-mobile.svg";
 // import bgDesktop from "./assets/bg-intro-desktop.svg";
 import bgPhone from "./assets/bg-phones.svg";
+import { Article } from "./components/article";
 
 export default function Content() {
-  console.log(data);
   return (
     <main>
+      {/* First section */}
       <section className="mb-14 md:mb-18 flex flex-col gap-12">
         <div className={`relative h-85.75 md:h-145.25 overflow-hidden `}>
           <img
@@ -29,8 +31,9 @@ export default function Content() {
           <BtnRequest className="cursor-pointer" />
         </div>
       </section>
-      <section className="bg-gray-100 py-16 px-6 md:p-20">
-        <div className="flex flex-col">
+      {/* Section choose bank */}
+      <section className="bg-gray-100 py-16 px-6 md:p-20  ">
+        <div className="flex flex-col xl:w-279 xl:mx-auto">
           <div className="mb-12 md:mb-18 text-center xl:text-left xl:w-158">
             <h2 className="preset-3 md:preset-2 text-blue-950 mb-4 md:mb-8">
               Why choose Digitalbank?
@@ -53,6 +56,24 @@ export default function Content() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+      {/* Latest Articles  */}
+      <section className="px-6 py-16 md:p-20 xl:px-0 xl:w-279 xl:mx-auto">
+        <p className="preset-3 md:preset-2 text-blue-950 text-center mb-12 md:mb-16 xl:mb-14 xl:text-left">
+          Latest Articles
+        </p>
+        <div className="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-4 xl:flex xl:gap-8">
+          {articles.map((article, idx) => (
+            <Article
+              key={idx}
+              imgUrl={article.imgUrl}
+              altText={article.altText}
+              author={article.author}
+              header={article.header}
+              text={article.text}
+            />
+          ))}
         </div>
       </section>
     </main>
