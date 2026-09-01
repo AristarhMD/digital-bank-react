@@ -9,6 +9,10 @@
   --color-blue-950: #2d314d;
   --color-green-400: #30c88f;
   --background-image-gradient-1: linear-gradient(#33d35e 0%, #2ab6d9 100%);
+
+  --background-image-gradient-1-stroke:
+    linear-gradient(#33d35e 0%, #2ab6d9 100%), #fff/40;
+
   --background-image-gradient-2: linear-gradient(#2d314d 0%, #2d314d00 100%);
   --font-sans: "Public Sans", sans-serif;
 }
@@ -40,4 +44,12 @@
 }
 @utility preset-8 {
   @apply font-normal text-[0.625rem] leading-[115%] tracking-normal;
+}
+
+@utility bottom-nav {
+  @apply preset-7-r text-white hover:text-green-400;
+}
+
+@utility hover-footer-btn {
+  @apply absolute content-[''] inset-0 z-1 bg-white/40;
 }

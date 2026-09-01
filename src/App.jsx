@@ -1,4 +1,5 @@
 import Content from "./Content";
+import Footer from "./Footer";
 import Navigation from "./Navigation";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Navigation />
       <Content />
+      <Footer />
     </>
   );
 }
